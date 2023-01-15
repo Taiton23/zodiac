@@ -1,0 +1,24 @@
+.container {
+  display: block;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-image: url("../../assets/the-rock.gif");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+
+button {
+    position: absolute;
+    top: 80%;
+    left: 25%;
+    cursor: pointer;
+    background: #ff007f;
+    color: #fff;
+    padding: 0 30px;
+    border-radius: 50px;
+    line-height: 45px;
+    border-color: transparent;
+  }

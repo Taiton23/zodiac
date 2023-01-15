@@ -1,0 +1,49 @@
+<form [formGroup]="form">
+    <div class="compatible-contet-container">
+      <div class="compatible-container">
+        <div class="compatible-title">
+          <div class="compatible-title-icon">
+            <img src="../assets/compatibl-calc.svg" />
+          </div>
+          <div class="compatible-title-text">
+            <h1>СОВМЕСТИМОСТЬ ПО ДАТЕ РОЖДЕНИЯ</h1>
+          </div>
+        </div>
+  
+        <div class="compatible-form">
+          <div class="female-date">
+            <!-- <img src="../assets/female.svg" alt=""> -->
+            <mat-icon aria-hidden="false" aria-label="Example home icon">female</mat-icon>
+            <mat-form-field appearance="fill" >
+              <mat-label>Выберите дату рождения девушки</mat-label>
+              <input matInput [matDatepicker]="picker" formControlName="female"/>
+              <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+  
+          <div class="male-date">
+            <!-- <img src="../assets/male.svg" alt=""> -->
+            <mat-icon aria-hidden="false" aria-label="Example home icon">male</mat-icon>
+            <mat-form-field appearance="fill" >
+              <mat-label>Выберите дату рождения парня</mat-label>
+              <input matInput [matDatepicker]="picker1" formControlName="male" />
+              <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker1"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="compatible-control">
+          <button (click)="calculate()" [disabled]="!form.valid" [ngClass]="{'disabled': !form.valid}">Рассчитать совместимость</button>
+        </div>
+      </div>
+    </div>
+  </form>

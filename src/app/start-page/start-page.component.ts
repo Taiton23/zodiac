@@ -1,16 +1,14 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-
-
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-start-page',
+  templateUrl: './start-page.component.html',
+  styleUrls: ['./start-page.component.scss']
 })
-export class AppComponent {
-  title = 'zodiac';
+export class StartPageComponent {
+
   form: FormGroup;
 
   constructor(private router: Router) {
@@ -29,10 +27,10 @@ export class AppComponent {
     const femaleDate = femaleDateObj?.toLocaleDateString();
 
     const isValid = this.checkDates(maleDate, femaleDate);
-    if (!isValid) {
+    if (isValid) {
       this.router.navigateByUrl(`result`).then();
     } else {
-
+      this.router.navigateByUrl(`fail`).then();
     }
   }
 
@@ -50,4 +48,5 @@ export class AppComponent {
   private isSasha(date: string): boolean {
     return date === '26.02.1995';
   }
+
 }
